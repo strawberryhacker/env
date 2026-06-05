@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "AnnotationMono:pixelsize=14:antialias=true:autohint=false";
+static char *font = "Annotation Mono:pixelsize=14:antialias=true:autohint=false";
 static int borderpx = 30;
 
 /*
@@ -60,7 +60,7 @@ static double maxlatency = 33;
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 800;
+static unsigned int blinktimeout = 200;
 
 /*
  * thickness of underline and bar cursors
@@ -123,8 +123,8 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
-	"#444444", /* default foreground colour */
-	"#ffffd7", /* default background colour */
+	"#333333", /* default foreground colour */
+	"#ffffff", /* default background colour */
 };
 
 
@@ -145,7 +145,7 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 4;
 
 /*
  * Default columns and rows numbers

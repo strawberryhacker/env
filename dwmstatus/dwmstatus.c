@@ -208,12 +208,7 @@ diskusage(const char *path)
 	if (!buf)
 		return NULL;
 
-	snprintf(buf, 64,
-		"%.0f%% %.1f/%.1fG",
-		used_pct,
-		(double)(total - free) / (1024.0 * 1024.0 * 1024.0),
-		(double)total / (1024.0 * 1024.0 * 1024.0));
-
+	snprintf(buf, 64, "%3.0f%%", used_pct);
 	return buf;
 }
 
@@ -343,8 +338,8 @@ main(void)
 		mem = memusage();
 		timez = mktimes("Week %W | %A | %d %b %Y | %H:%M:%S", tzberlin);
 		kbmap = execscript("setxkbmap -query | grep layout | cut -d':' -f 2- | tr -d ' '");
-		disk = diskusage("/hometrsnstnsnt");
-		status = smprintf("| CPU %s | RAM %s | DISK %s | %s | %s ", load, mem, disk, kbmap, timez);
+		disk = diskusage("/home");
+		status = smprintf("| cpu %s | ram %s | disk %s | %s | %s ", load, mem, disk, kbmap, timez);
 		setstatus(status);
 
 		free(load);
